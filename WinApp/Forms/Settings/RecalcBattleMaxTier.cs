@@ -70,16 +70,24 @@ namespace WinApp.Forms
                 loopCount++;
                 if (loopCount >= 20)
                 {
+					sql = updateSQL;
+
                     battleTime = dr["battleTime"].ToString();
                     UpdateProgressBar("Calc Max Tier " + badProgressBar.Value + "/" + tot.ToString() + " " + battleTime, loopCount);
                     await DB.ExecuteNonQuery(sql, Config.Settings.showDBErrors, true);
+
                     loopCount = 0;
+					updateSQL = "";
                 }
 			}
             if (updateSQL != "") // Update last batch of sql's
 			{
-                UpdateProgressBar("Calc Max Tier " + badProgressBar.Value + "/" + tot.ToString() + " " + battleTime, loopCount);
+				sql = updateSQL;
+				
+				UpdateProgressBar("Calc Max Tier " + badProgressBar.Value + "/" + tot.ToString() + " " + battleTime, loopCount);
                 await DB.ExecuteNonQuery(sql, Config.Settings.showDBErrors, true);
+
+				updateSQL = "";
 			}
 
 			// Done
