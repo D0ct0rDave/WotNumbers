@@ -17,6 +17,7 @@ namespace WinApp.Code
 {
     class Battle2json
     {
+        private static PythonEngine pythonEngine = new PythonEngine();
         private static List<string> battleResultDatFileCopied = new List<string>(); // List of dat-files copyied from wargaming battle folder, to avoid copy several times
         private static List<string> battleResultJsonFileExists = new List<string>(); // List of json-files already existing in battle folder, to avoid converting several times
 
@@ -128,7 +129,8 @@ namespace WinApp.Code
                         Log.AddToLogBuffer(" > > Start converting " + totFilesDat.ToString() + " battle DAT-files to json");
                         foreach (string file in filesDatCopied)
                         {
-                            try {
+                            try
+                            {
                                 // Convert file to json
                                 var result = await ConvertBattleUsingPython(file);
                                 if (result.DeleteFile)
@@ -500,7 +502,8 @@ namespace WinApp.Code
                                         }
                                         if (!foundPlayerClan)
                                         {
-                                            clanCount.Add(new ClanInfo() {
+                                            clanCount.Add(new ClanInfo()
+                                            {
                                                 ClanDBID = newPlayer.clanDBID,
                                                 ClanAbbrev = newPlayer.clanAbbrev,
                                                 Count = 1
@@ -904,7 +907,7 @@ namespace WinApp.Code
             string appPath = Path.GetDirectoryName(Application.ExecutablePath); // path to app dir
             string battle2jsonScriptFolder = appPath + "\\battle2json";  // python-script for converting dossier file
 
-            ICollection<string> searchPaths = PythonEngine.Engine.GetSearchPaths();
+            ICollection<string> searchPaths = pythonEngine.Engine.GetSearchPaths();
             bool pathFound = false;
             foreach (string path in searchPaths)
             {
@@ -917,7 +920,7 @@ namespace WinApp.Code
             if (!pathFound)
             {
                 searchPaths.Add(battle2jsonScriptFolder);
-                PythonEngine.Engine.SetSearchPaths(searchPaths);
+                pythonEngine.Engine.SetSearchPaths(searchPaths);
             }
         }
         private async static Task<ConvBtlUsingPythonResult> ConvertBattleUsingPython(string filename)
@@ -927,18 +930,18 @@ namespace WinApp.Code
                 Success = false,
                 DeleteFile = false
             };
-            
+
             // Locate Python script
             string appPath = Path.GetDirectoryName(Application.ExecutablePath); // path to app dir
             string battle2jsonScriptFolder = appPath + "\\battle2json";  // python-script for converting dossier file
             string battle2jsonScript = battle2jsonScriptFolder + "\\wotbr2j.py";  // python-script for converting dossier file
 
             CheckBr2JSearchModulesPath();
-            if (PythonEngine.LockPython(timeout: 10))
+            if (pythonEngine.LockPython(timeout: 10))
             {
                 try
                 {
-                    PythonEngine.ipyOutput = ""; // clear ipy output
+                    pythonEngine.ipyOutput = ""; // clear ipy output
                     try
                     {
                         Log.AddToLogBuffer(" > > Starting to converted battle DAT-file to JSON file: " + filename);
@@ -950,8 +953,8 @@ namespace WinApp.Code
                         };
 
                         //NORMAL
-                        PythonEngine.Engine.GetSysModule().SetVariable("argv", argv);
-                        ScriptScope scope = PythonEngine.Engine.ExecuteFile(battle2jsonScript); // this is your python program
+                        pythonEngine.Engine.GetSysModule().SetVariable("argv", argv);
+                        ScriptScope scope = pythonEngine.Engine.ExecuteFile(battle2jsonScript); // this is your python program
                         dynamic scopeResult = scope.GetVariable("main")();
 
                         Log.AddToLogBuffer(" > > > Converted battle DAT-file to JSON file: " + filename);
@@ -971,12 +974,12 @@ namespace WinApp.Code
                         // Cleanup
                         result.DeleteFile = true;
                     }
-                    Log.AddIpyToLogBuffer(PythonEngine.ipyOutput);
+                    Log.AddIpyToLogBuffer(pythonEngine.ipyOutput);
                     await Log.WriteLogBuffer();
                 }
                 finally
                 {
-                    PythonEngine.UnlockPython();
+                    pythonEngine.UnlockPython();
                 }
             }
             else
@@ -1008,7 +1011,7 @@ namespace WinApp.Code
 
         }
 
-    private async static Task<int?> GetMaxBattleTier(int battleId)
+        private async static Task<int?> GetMaxBattleTier(int battleId)
         {
             try
             {
@@ -1027,7 +1030,7 @@ namespace WinApp.Code
                 await Log.LogToFile(ex, "Error getting max tier for tanks in battle: " + battleId);
                 return null;
             }
-            
+
         }
     }
 }
