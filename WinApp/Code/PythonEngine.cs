@@ -12,57 +12,60 @@ using IronPython.Runtime;
 
 namespace WinApp.Code
 {
-    public class PythonEngine
+	public class PythonEngine
 	{
-		public static Microsoft.Scripting.Hosting.ScriptEngine Engine; // allow to run ironpython programs
-        private static Mutex pythonLock = new Mutex();
+		public Microsoft.Scripting.Hosting.ScriptEngine Engine; // allow to run ironpython programs
+		private Mutex pythonLock = new Mutex();
 
 		// Fetch output
-		public static string ipyOutput;
-		public static MemoryStream ipyMemoryStream = new MemoryStream(1024);
-		public static EventRaisingStreamWriter outputWr;
-		
-		public static void CreateEngine()
+		public string ipyOutput;
+		public MemoryStream ipyMemoryStream = new MemoryStream(1024);
+		public EventRaisingStreamWriter outputWr;
+		public PythonEngine()
 		{
-            // Create Engine - Debug mode
-            //Dictionary<string, object> options = new Dictionary<string, object>();
-            //options["Debug"] = true;
-            //Engine = Python.CreateEngine(options); 
+			CreateEngine();
+		}
+		public void CreateEngine()
+		{
+			// Create Engine - Debug mode
+			//Dictionary<string, object> options = new Dictionary<string, object>();
+			//options["Debug"] = true;
+			//Engine = Python.CreateEngine(options); 
 
-            // Create Engine - Normal mode
-            Engine = Python.CreateEngine();
+			// Create Engine - Normal mode
+			Engine = Python.CreateEngine();
 
-            var pc = HostingHelpers.GetLanguageContext(Engine) as PythonContext;
-            var hooks = pc.SystemState.Get__dict__()["path_hooks"] as List;
-            hooks.Clear();
+			var pc = HostingHelpers.GetLanguageContext(Engine) as PythonContext;
+			var hooks = pc.SystemState.Get__dict__()["path_hooks"] as List;
+			hooks.Clear();
 
-            /*
+			/*
 			System.IO.FileStream fs = new System.IO.FileStream(ipyLogFile, System.IO.FileMode.Create);
 			Engine.Runtime.IO.SetOutput(fs, Encoding.UTF8); // write to file
 			*/
 
-            // Create handlers for fetching python output
-            outputWr = new EventRaisingStreamWriter(ipyMemoryStream);
+			// Create handlers for fetching python output
+			outputWr = new EventRaisingStreamWriter(ipyMemoryStream);
 			outputWr.StringWritten += new EventHandler<MyEvtArgs<string>>(sWr_StringWritten);
 			Engine.Runtime.IO.SetOutput(ipyMemoryStream, outputWr);
 		}
 
-        public static bool LockPython(int timeout = 1)
-        {
-            if (pythonLock.WaitOne(TimeSpan.FromSeconds(timeout)))
-            {
-                return true;
-            }
-            Log.AddToLogBuffer("Unable to lock Python environment!");
-            return false;
-        }
+		public bool LockPython(int timeout = 1)
+		{
+			if (pythonLock.WaitOne(TimeSpan.FromSeconds(timeout)))
+			{
+				return true;
+			}
+			Log.AddToLogBuffer("Unable to lock Python environment!");
+			return false;
+		}
 
-        public static void UnlockPython()
-        {
-            pythonLock.ReleaseMutex();
-        }
+		public void UnlockPython()
+		{
+			pythonLock.ReleaseMutex();
+		}
 
-        private static void sWr_StringWritten(object sender, MyEvtArgs<string> e)
+		private void sWr_StringWritten(object sender, MyEvtArgs<string> e)
 		{
 			ipyOutput += e.Value;
 		}
@@ -70,8 +73,8 @@ namespace WinApp.Code
 	}
 
 	// Used for ironpython redirect output
-    [DebuggerNonUserCode]
-    public class MyEvtArgs<T> : EventArgs
+	[DebuggerNonUserCode]
+	public class MyEvtArgs<T> : EventArgs
 	{
 		public T Value
 		{
@@ -84,7 +87,7 @@ namespace WinApp.Code
 		}
 	}
 
-    [DebuggerNonUserCode]
+	[DebuggerNonUserCode]
 	public class EventRaisingStreamWriter : StreamWriter
 	{
 		#region Event
@@ -131,4 +134,3 @@ namespace WinApp.Code
 		#endregion
 	}
 }
-

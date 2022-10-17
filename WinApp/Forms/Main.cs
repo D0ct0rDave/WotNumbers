@@ -204,9 +204,6 @@ namespace WinApp.Forms
 				// Show vbAddict Player Profil toolbar if upload activated
 				// mVBaddict.Visible = (Config.Settings.vBAddictShowToolBarMenu);
 
-				// Create IronPython Engine
-				PythonEngine.CreateEngine();
-
 				// Startup settings
 				if (!LoadConfigDataResult.Success)
 				{

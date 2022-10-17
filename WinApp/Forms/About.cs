@@ -12,7 +12,8 @@ using WinApp.Code;
 namespace WinApp.Forms
 {
 	public partial class About : FormCloseOnEsc
-    {
+	{
+		private static PythonEngine pythonEngine = new PythonEngine();
 		public About()
 		{
 			InitializeComponent();
@@ -26,9 +27,9 @@ namespace WinApp.Forms
 			lblAppVer.Text = AppVersion.AssemblyVersion + " " + AppVersion.BuildVersion;
 			lblDBver.Text = (await DBVersion.GetDBVersion()).ToString("0000");
 			lblWN8ver.Text = (await DBVersion.GetWNVersion(8)).ToString();
-            lblWN9ver.Text = (await DBVersion.GetWNVersion(9)).ToString();
-            linkWotNumbers.Text = Constants.WotNumWebUrl();
-        }
+			lblWN9ver.Text = (await DBVersion.GetWNVersion(9)).ToString();
+			linkWotNumbers.Text = Constants.WotNumWebUrl();
+		}
 
 		private void linkWotNumbers_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
@@ -49,12 +50,12 @@ namespace WinApp.Forms
 				//{
 				string msg =
 					"Runtime.IO.InputEncoding: " + Environment.NewLine +
-					"   " + PythonEngine.Engine.Runtime.IO.InputEncoding.EncodingName + Environment.NewLine +
-					"   " + PythonEngine.Engine.Runtime.IO.InputEncoding.HeaderName + " / " + PythonEngine.Engine.Runtime.IO.InputEncoding.BodyName + Environment.NewLine +
+					"   " + pythonEngine.Engine.Runtime.IO.InputEncoding.EncodingName + Environment.NewLine +
+					"   " + pythonEngine.Engine.Runtime.IO.InputEncoding.HeaderName + " / " + pythonEngine.Engine.Runtime.IO.InputEncoding.BodyName + Environment.NewLine +
 					Environment.NewLine +
 					"Runtime.IO.OutputEncoding: " + Environment.NewLine +
-					"   " + PythonEngine.Engine.Runtime.IO.OutputEncoding.EncodingName + Environment.NewLine +
-					"   " + PythonEngine.Engine.Runtime.IO.OutputEncoding.HeaderName + " / " + PythonEngine.Engine.Runtime.IO.OutputEncoding.BodyName + Environment.NewLine +
+					"   " + pythonEngine.Engine.Runtime.IO.OutputEncoding.EncodingName + Environment.NewLine +
+					"   " + pythonEngine.Engine.Runtime.IO.OutputEncoding.HeaderName + " / " + pythonEngine.Engine.Runtime.IO.OutputEncoding.BodyName + Environment.NewLine +
 					Environment.NewLine + Environment.NewLine;
 				Code.MsgBox.Show(msg, "IronPython Environment");
 				//}
