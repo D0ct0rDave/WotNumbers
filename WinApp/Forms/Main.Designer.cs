@@ -267,6 +267,21 @@
             this.mHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.lblStatusRowCount = new System.Windows.Forms.Label();
             this.panelMainArea = new System.Windows.Forms.Panel();
+            this.panelTankListHeader = new System.Windows.Forms.Panel();
+            this.toolStripEx1 = new WinApp.Code.ToolStripEx(this.components);
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator62 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator63 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.scrollCorner = new BadScrollBarCorner();
             this.scrollY = new BadScrollBar();
             this.dataGridMain = new System.Windows.Forms.DataGridView();
@@ -278,6 +293,8 @@
             this.MainTheme.SuspendLayout();
             this.toolMain.SuspendLayout();
             this.panelMainArea.SuspendLayout();
+            this.panelTankListHeader.SuspendLayout();
+            this.toolStripEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -537,6 +554,7 @@
             // 
             this.mColumnSelect_01.Checked = true;
             this.mColumnSelect_01.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.mColumnSelect_01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_01.Name = "mColumnSelect_01";
             this.mColumnSelect_01.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_01.Text = "Col List #1";
@@ -545,6 +563,7 @@
             // 
             // mColumnSelect_02
             // 
+            this.mColumnSelect_02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_02.Name = "mColumnSelect_02";
             this.mColumnSelect_02.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_02.Text = "Col List #2";
@@ -553,6 +572,7 @@
             // 
             // mColumnSelect_03
             // 
+            this.mColumnSelect_03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_03.Name = "mColumnSelect_03";
             this.mColumnSelect_03.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_03.Text = "Col List #3";
@@ -561,6 +581,7 @@
             // 
             // mColumnSelect_04
             // 
+            this.mColumnSelect_04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_04.Name = "mColumnSelect_04";
             this.mColumnSelect_04.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_04.Text = "Col List #4";
@@ -570,6 +591,7 @@
             // 
             // mColumnSelect_05
             // 
+            this.mColumnSelect_05.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_05.Name = "mColumnSelect_05";
             this.mColumnSelect_05.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_05.Text = "Col List #5";
@@ -579,6 +601,7 @@
             // 
             // mColumnSelect_06
             // 
+            this.mColumnSelect_06.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_06.Name = "mColumnSelect_06";
             this.mColumnSelect_06.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_06.Text = "Col List #6";
@@ -588,6 +611,7 @@
             // 
             // mColumnSelect_07
             // 
+            this.mColumnSelect_07.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_07.Name = "mColumnSelect_07";
             this.mColumnSelect_07.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_07.Text = "Col List #7";
@@ -597,6 +621,7 @@
             // 
             // mColumnSelect_08
             // 
+            this.mColumnSelect_08.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_08.Name = "mColumnSelect_08";
             this.mColumnSelect_08.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_08.Text = "Col List #8";
@@ -606,6 +631,7 @@
             // 
             // mColumnSelect_09
             // 
+            this.mColumnSelect_09.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_09.Name = "mColumnSelect_09";
             this.mColumnSelect_09.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_09.Text = "Col List #9";
@@ -615,6 +641,7 @@
             // 
             // mColumnSelect_10
             // 
+            this.mColumnSelect_10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_10.Name = "mColumnSelect_10";
             this.mColumnSelect_10.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_10.Text = "Col List #10";
@@ -624,6 +651,7 @@
             // 
             // mColumnSelect_11
             // 
+            this.mColumnSelect_11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_11.Name = "mColumnSelect_11";
             this.mColumnSelect_11.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_11.Text = "Col List #11";
@@ -633,6 +661,7 @@
             // 
             // mColumnSelect_12
             // 
+            this.mColumnSelect_12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_12.Name = "mColumnSelect_12";
             this.mColumnSelect_12.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_12.Text = "Col List #12";
@@ -642,6 +671,7 @@
             // 
             // mColumnSelect_13
             // 
+            this.mColumnSelect_13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_13.Name = "mColumnSelect_13";
             this.mColumnSelect_13.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_13.Text = "Col List #13";
@@ -651,6 +681,7 @@
             // 
             // mColumnSelect_14
             // 
+            this.mColumnSelect_14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mColumnSelect_14.Name = "mColumnSelect_14";
             this.mColumnSelect_14.Size = new System.Drawing.Size(193, 22);
             this.mColumnSelect_14.Text = "Col List #14";
@@ -700,6 +731,7 @@
             // 
             this.mMapDefault.Checked = true;
             this.mMapDefault.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.mMapDefault.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mMapDefault.Name = "mMapDefault";
             this.mMapDefault.Size = new System.Drawing.Size(219, 22);
             this.mMapDefault.Text = "Default";
@@ -708,6 +740,7 @@
             // 
             // mMapDescr
             // 
+            this.mMapDescr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mMapDescr.Name = "mMapDescr";
             this.mMapDescr.Size = new System.Drawing.Size(219, 22);
             this.mMapDescr.Text = "Map Description";
@@ -716,6 +749,7 @@
             // 
             // mMapDescrLarge
             // 
+            this.mMapDescrLarge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mMapDescrLarge.Name = "mMapDescrLarge";
             this.mMapDescrLarge.Size = new System.Drawing.Size(219, 22);
             this.mMapDescrLarge.Text = "Map Large Images";
@@ -729,6 +763,7 @@
             // 
             // mMapShowAll
             // 
+            this.mMapShowAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mMapShowAll.Name = "mMapShowAll";
             this.mMapShowAll.Size = new System.Drawing.Size(219, 22);
             this.mMapShowAll.Text = "Show Maps Without Battles";
@@ -739,6 +774,7 @@
             // 
             this.mMapShowOld.Checked = true;
             this.mMapShowOld.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.mMapShowOld.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mMapShowOld.Name = "mMapShowOld";
             this.mMapShowOld.Size = new System.Drawing.Size(219, 22);
             this.mMapShowOld.Text = "Show Old / Obsolete Maps";
@@ -2558,6 +2594,7 @@
             // panelMainArea
             // 
             this.panelMainArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panelMainArea.Controls.Add(this.panelTankListHeader);
             this.panelMainArea.Controls.Add(this.scrollCorner);
             this.panelMainArea.Controls.Add(this.scrollY);
             this.panelMainArea.Controls.Add(this.dataGridMain);
@@ -2566,6 +2603,162 @@
             this.panelMainArea.Name = "panelMainArea";
             this.panelMainArea.Size = new System.Drawing.Size(649, 336);
             this.panelMainArea.TabIndex = 18;
+            // 
+            // panelTankListHeader
+            // 
+            this.panelTankListHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panelTankListHeader.Controls.Add(this.toolStripEx1);
+            this.panelTankListHeader.Location = new System.Drawing.Point(14, 16);
+            this.panelTankListHeader.Name = "panelTankListHeader";
+            this.panelTankListHeader.Size = new System.Drawing.Size(624, 33);
+            this.panelTankListHeader.TabIndex = 22;
+            // 
+            // toolStripEx1
+            // 
+            this.toolStripEx1.AutoSize = false;
+            this.toolStripEx1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripLabel1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripSeparator16,
+            this.toolStripSeparator62,
+            this.toolStripButton7,
+            this.toolStripSeparator63,
+            this.toolStripButton8,
+            this.toolStripButton9});
+            this.toolStripEx1.Location = new System.Drawing.Point(0, 4);
+            this.toolStripEx1.Name = "toolStripEx1";
+            this.toolStripEx1.Size = new System.Drawing.Size(542, 25);
+            this.toolStripEx1.Stretch = true;
+            this.toolStripEx1.TabIndex = 19;
+            this.toolStripEx1.Text = "toolStripEx1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(22, 22);
+            this.toolStripButton1.ToolTipText = "Start World of Tanks";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel1.Text = "View:";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.toolStripButton2.Checked = true;
+            this.toolStripButton2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.toolStripButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(60, 22);
+            this.toolStripButton2.Text = "&Home";
+            this.toolStripButton2.ToolTipText = " Home View";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.BackColor = System.Drawing.Color.Fuchsia;
+            this.toolStripButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(56, 22);
+            this.toolStripButton3.Text = "&Tanks";
+            this.toolStripButton3.ToolTipText = "Tank View";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.BackColor = System.Drawing.Color.Fuchsia;
+            this.toolStripButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(62, 22);
+            this.toolStripButton4.Text = "&Battles";
+            this.toolStripButton4.ToolTipText = "Battle View";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButton5.Text = "Maps";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.AutoSize = false;
+            this.toolStripButton6.BackColor = System.Drawing.Color.Fuchsia;
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(22, 22);
+            this.toolStripButton6.Text = "Refresh";
+            this.toolStripButton6.ToolTipText = "Refresh";
+            // 
+            // toolStripSeparator16
+            // 
+            this.toolStripSeparator16.Name = "toolStripSeparator16";
+            this.toolStripSeparator16.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator62
+            // 
+            this.toolStripSeparator62.Name = "toolStripSeparator62";
+            this.toolStripSeparator62.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.AutoSize = false;
+            this.toolStripButton7.BackColor = System.Drawing.Color.Fuchsia;
+            this.toolStripButton7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(61, 22);
+            this.toolStripButton7.Text = "Charts";
+            this.toolStripButton7.ToolTipText = "Show Charts";
+            // 
+            // toolStripSeparator63
+            // 
+            this.toolStripSeparator63.Name = "toolStripSeparator63";
+            this.toolStripSeparator63.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton8.Text = "toolStripButton8";
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton9.Text = "toolStripButton9";
             // 
             // scrollCorner
             // 
@@ -2581,7 +2774,7 @@
             // 
             this.scrollY.BackColor = System.Drawing.Color.Transparent;
             this.scrollY.Image = null;
-            this.scrollY.Location = new System.Drawing.Point(621, 16);
+            this.scrollY.Location = new System.Drawing.Point(621, 55);
             this.scrollY.Name = "scrollY";
             this.scrollY.ScrollElementsTotals = 100;
             this.scrollY.ScrollElementsVisible = 0;
@@ -2589,7 +2782,7 @@
             this.scrollY.ScrollNecessary = true;
             this.scrollY.ScrollOrientation = System.Windows.Forms.ScrollOrientation.VerticalScroll;
             this.scrollY.ScrollPosition = 0;
-            this.scrollY.Size = new System.Drawing.Size(17, 276);
+            this.scrollY.Size = new System.Drawing.Size(17, 237);
             this.scrollY.TabIndex = 21;
             this.scrollY.Text = "badScrollBar2";
             this.scrollY.Visible = false;
@@ -2629,7 +2822,7 @@
             this.dataGridMain.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridMain.EnableHeadersVisualStyles = false;
             this.dataGridMain.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.dataGridMain.Location = new System.Drawing.Point(14, 16);
+            this.dataGridMain.Location = new System.Drawing.Point(14, 55);
             this.dataGridMain.Name = "dataGridMain";
             this.dataGridMain.ReadOnly = true;
             this.dataGridMain.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -2646,7 +2839,7 @@
             this.dataGridMain.RowHeadersWidth = 25;
             this.dataGridMain.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridMain.ShowEditingIcon = false;
-            this.dataGridMain.Size = new System.Drawing.Size(601, 276);
+            this.dataGridMain.Size = new System.Drawing.Size(601, 237);
             this.dataGridMain.TabIndex = 11;
             this.dataGridMain.Visible = false;
             this.dataGridMain.RowHeadersWidthChanged += new System.EventHandler(this.dataGridMain_RowHeadersWidthChanged);
@@ -2733,6 +2926,9 @@
             this.toolMain.ResumeLayout(false);
             this.toolMain.PerformLayout();
             this.panelMainArea.ResumeLayout(false);
+            this.panelTankListHeader.ResumeLayout(false);
+            this.toolStripEx1.ResumeLayout(false);
+            this.toolStripEx1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).EndInit();
             this.ResumeLayout(false);
 
@@ -2979,6 +3175,21 @@
         private System.IO.FileSystemWatcher fswBattle;
         private System.Windows.Forms.ToolStripMenuItem mTankFilter_CountryItaly;
         private System.Windows.Forms.ToolStripMenuItem mRecalcBattlePos;
+        private System.Windows.Forms.Panel panelTankListHeader;
+        private Code.ToolStripEx toolStripEx1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator62;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator63;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
     }
 }
 

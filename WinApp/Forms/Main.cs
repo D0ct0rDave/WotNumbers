@@ -98,8 +98,11 @@ namespace WinApp.Forms
 			{
 				this.WindowState = FormWindowState.Maximized;
 				mainFormWindowsState = FormWindowState.Maximized;
-			}
-			this.Opacity = 100;
+				}
+
+				panelTankListHeader.Visible = false;
+
+				this.Opacity = 100;
 		}
 
 		private async void Main_Shown(object sender, EventArgs e)
@@ -115,6 +118,8 @@ namespace WinApp.Forms
 			mHomeView.Visible = true;
 			mHomeViewEditMode.Visible = true;
 			mBattleGroup.Visible = false;
+			panelTankListHeader.Visible = false;
+
 			// Check config
 			if (await DB.CheckConnection(false))
 			{
@@ -156,8 +161,8 @@ namespace WinApp.Forms
 			scrollY.ScrollElementsTotals = 0;
 			scrollX.Left = 0;
 			// Grid init placement
-			int gridAreaTop = 0; // Start below info panel
-			int gridAreaHeight = panelMainArea.Height; // Grid height
+			int gridAreaTop = GetGridAreaTop(); // Start below info panel
+			int gridAreaHeight = GetGridAreaHeight(); // Grid height
 			dataGridMain.Top = gridAreaTop;
 			dataGridMain.Left = 0;
 			dataGridMain.Width = panelMainArea.Width - scrollY.Width;
@@ -973,8 +978,8 @@ namespace WinApp.Forms
 				// Set scrollbars, size differs according to scrollbar visibility (ScrollNecessary)
 				RefreshScrollbars();
 				// Scroll and grid size
-				int gridAreaTop = 0; // Start below info panel
-				int gridAreaHeight = panelMainArea.Height; // Grid height
+				int gridAreaTop = GetGridAreaTop(); // Start below info panel
+				int gridAreaHeight = GetGridAreaHeight(); // Grid height
 				dataGridMain.Top = gridAreaTop;
 				scrollCorner.Left = panelMainArea.Width - scrollCorner.Width;
 				scrollCorner.Top = panelMainArea.Height - scrollCorner.Height;
@@ -1101,6 +1106,7 @@ namespace WinApp.Forms
 						mMode.Visible = false;
 						mBattleGroup.Visible = false;
 						mRefreshSeparator.Visible = true;
+						panelTankListHeader.Visible = false;
 						break;
 					case GridView.Views.Tank:
 						// Select view
@@ -1128,6 +1134,7 @@ namespace WinApp.Forms
 						mHomeViewEdit.Visible = false;
 						mBattleGroup.Visible = false;
 						mRefreshSeparator.Visible = true;
+						panelTankListHeader.Visible = true;
 						mColumnSelect_Edit.Text = "Edit Tank View...";
 						mColumnSelect.ToolTipText = "Select Tank View";
 						// Get Column Setup List - also finds correct tank filter/fav list
@@ -1165,6 +1172,7 @@ namespace WinApp.Forms
 						mHomeView.Visible = false;
 						mHomeViewEdit.Visible = false;
 						mRefreshSeparator.Visible = true;
+						panelTankListHeader.Visible = false;
 						mColumnSelect_Edit.Text = "Edit Battle View...";
 						mColumnSelect.ToolTipText = "Select Battle View";
 						// Get Column Setup List  - also finds correct tank filter/fav list
@@ -1202,6 +1210,7 @@ namespace WinApp.Forms
 						mHomeView.Visible = false;
 						mHomeViewEditMode.Visible = false;
 						mRefreshSeparator.Visible = true;
+						panelTankListHeader.Visible = false;
 						mColumnSelect_Edit.Text = "Edit Map View...";
 						mColumnSelect.ToolTipText = "Select Map View";
 						// Get Column Setup List  - also finds correct tank filter/fav list
@@ -2561,11 +2570,34 @@ namespace WinApp.Forms
 					break;
 			}
 		}
+		int GetGridAreaTop()
+		{
+			if (MainSettings.View == GridView.Views.Tank)
+			{
+				return panelTankListHeader.Height;
+			}
+			else
+			{
+				return 0;
+			}
+		}
+
+		int GetGridAreaHeight()
+		{
+			if (MainSettings.View == GridView.Views.Tank)
+			{
+				return panelMainArea.Height - panelTankListHeader.Height;
+			}
+			else
+			{
+				return panelMainArea.Height;
+			}
+		}
 
 		private async Task GridShowTank(string Status2Message)
 		{
 			// Grid init placement
-			int gridAreaTop = 0; // Start below info panel
+			int gridAreaTop = GetGridAreaTop(); // Start below info panel
 			dataGridMain.Top = gridAreaTop;
 			dataGridMain.Left = 0;
 			// Init
@@ -2788,7 +2820,7 @@ namespace WinApp.Forms
 			try
 			{
 				// Grid init placement
-				int gridAreaTop = 0; // Start below info panel
+				int gridAreaTop = GetGridAreaTop(); // Start below info panel
 				dataGridMain.Top = gridAreaTop;
 				dataGridMain.Left = 0;
 				// Init
@@ -3300,7 +3332,7 @@ namespace WinApp.Forms
 			try
 			{
 				// Grid init placement
-				int gridAreaTop = 0; // Start below info panel
+				int gridAreaTop = GetGridAreaTop(); // Start below info panel
 				dataGridMain.Top = gridAreaTop;
 				dataGridMain.Left = 0;
 				// Init
