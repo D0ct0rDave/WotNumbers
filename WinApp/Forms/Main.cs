@@ -748,6 +748,8 @@ namespace WinApp.Forms
 					await RunRecalcBattleMinTier();
 				if (DBVersion.RunRecalcBattleMaxTier)
 					await RunRecalcBattleMaxTier();
+				if (DBVersion.RunRecalcBattleAccountId)
+					await RunRecalcBattleAccountId();
 
 				// Check for dossier update
 				StatusBarHelper.Message = message;
@@ -4710,7 +4712,13 @@ namespace WinApp.Forms
 			await ShowView("Refreshed grid");
 		}
 
-
+		private async Task RunRecalcBattleAccountId()
+		{
+			Form frm = new Forms.RecalcBattleAccountId(true);
+			frm.ShowDialog(this);
+			await ShowView("Refreshed grid");
+		}
+		
 		private async void toolItemSettingsRun_Click(object sender, EventArgs e)
 		{
 			mSettingsRun.Checked = !mSettingsRun.Checked;
@@ -4757,7 +4765,6 @@ namespace WinApp.Forms
 			Form frm = new Forms.DatabaseTable();
 			FormHelper.OpenFormCenterOfParent(this, frm);
 		}
-
 
 		private void mHelpAbout_Click(object sender, EventArgs e)
 		{

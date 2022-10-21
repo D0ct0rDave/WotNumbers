@@ -152,6 +152,7 @@
     <Compile Include="Code\BattleCountFilterHelper.cs" />
     <Compile Include="Code\BattleHelper.cs" />
     <Compile Include="Code\BattleResultRetriever.cs" />
+    <Compile Include="Code\BonusType.cs" />
     <Compile Include="Code\Constants.cs" />
     <Compile Include="Code\CursorHelper.cs" />
     <Compile Include="Code\CustomFileCopier.cs" />
@@ -165,6 +166,12 @@
     </Compile>
     <Compile Include="Forms\BattleDetail\BattleDetailMap.Designer.cs">
       <DependentUpon>BattleDetailMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\RecalcBattleAccountId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\RecalcBattleAccountId.designer.cs">
+      <DependentUpon>RecalcBattleAccountId.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\AppBattleUpload.cs" />
     <Compile Include="Services\AppNewVersion.cs" />
@@ -745,6 +752,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\MergePlayers.resx">
       <DependentUpon>MergePlayers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\RecalcBattleAccountId.resx">
+      <DependentUpon>RecalcBattleAccountId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\RecalcBattleMaxTier.resx">
       <DependentUpon>RecalcBattleMaxTier.cs</DependentUpon>
